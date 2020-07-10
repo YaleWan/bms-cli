@@ -1,0 +1,53 @@
+{
+  "name": "bms-cli",
+  "version": "1.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint src"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "bin": {
+    "bms": "bin/bms.js"
+  },
+  "keywords": [],
+  "author": "yhwang",
+  "license": "ISC",
+  "lint-staged": {
+    "*.{js,vue}": [
+      "eslint --fix",
+      "git add"
+    ],
+    "packages/**/bin/*": [
+      "eslint --fix",
+      "git add"
+    ]
+  },
+  "dependencies": {
+    "axios": "^0.19.1",
+    "chalk": "^3.0.0",
+    "commander": "^4.1.0",
+    "didyoumean": "^1.2.1",
+    "download-git-repo": "^3.0.2",
+    "eslint": "^6.8.0",
+    "eslint-plugin-node": "^11.0.0",
+    "eslint-plugin-vue-libs": "^4.0.0",
+    "fs-extra": "^8.1.0",
+    "husky": "^4.0.1",
+    "inquirer": "^7.0.3",
+    "minimist": "^1.2.0",
+    "ora": "^4.0.3",
+    "validate-npm-package-name": "^3.0.0"
+  },
+  "devDependencies": {
+    "execa": "^4.0.3",
+    "figlet": "^1.4.0",
+    "lodash.clonedeep": "^4.5.0",
+    "shelljs": "^0.8.4",
+    "strip-ansi": "^6.0.0"
+  }
+}
